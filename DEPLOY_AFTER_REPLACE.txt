@@ -1,0 +1,36 @@
+ENASH CHANGED FILES - APPLY FROM PROJECT ROOT
+
+1) Extract/copy these files over your existing ENASH project, preserving folders.
+
+2) Delete the old public document folder locally because the documents are now private Cloud Function attachments:
+   PowerShell:
+   Remove-Item -Recurse -Force .\public\compliance
+
+   The updated vite.config.js also strips any legacy /compliance PDFs from production builds.
+
+3) Check functions\.env.enashmain.
+   Keep your current ENASH_INBOX.
+
+   For testing BEFORE your own domain is verified in Resend:
+   ENASH_FROM_EMAIL="ENASH Website <onboarding@resend.dev>"
+
+   After your own sending domain is verified in Resend, change it to your verified domain, for example:
+   ENASH_FROM_EMAIL="ENASH <hello@enash.co.za>"
+
+   Your current Foundry project endpoint is supported by the updated code:
+   AZURE_OPENAI_ENDPOINT=https://siphumathendo222-3958-resource.services.ai.azure.com/api/projects/siphumathendo222-3958
+
+   AZURE_OPENAI_MODEL MUST be the exact deployment name shown in Microsoft Foundry > Models + endpoints.
+
+4) Your existing Secret Manager entries remain unchanged:
+   RESEND_API_KEY
+   AZURE_OPENAI_API_KEY
+
+5) Build and deploy:
+   npm run build
+   firebase deploy --only functions,hosting,firestore
+
+6) New deployed function:
+   documentRequest
+
+The serviceRequest, contactMessage and documentRequest functions now store requests in Firestore and report real email delivery status instead of silently returning success after a Resend failure.

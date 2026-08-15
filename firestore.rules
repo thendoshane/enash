@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Front-facing site writes through Cloud Functions only.
+    // Admin SDK calls from Functions bypass these rules.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
