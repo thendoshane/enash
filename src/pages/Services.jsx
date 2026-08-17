@@ -1,29 +1,39 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import ServiceCard from '../components/ServiceCard';
-import SectionHeading from '../components/SectionHeading';
 import CTA from '../components/CTA';
-import { services } from '../data/siteData';
+import { serviceGroups, services } from '../data/siteData';
+
+function servicesFor(group) {
+  return group.slugs.map((slug) => services.find((service) => service.slug === slug)).filter(Boolean);
+}
 
 export default function Services() {
   return (
     <>
-      <PageHero eyebrow="Services" title="Digital, data, AI and technology services that connect together." text="Choose a single service or combine multiple capabilities into one delivery. ENASH can support the full path from requirement and design to deployment, communication and support." />
+      <PageHero eyebrow="Services" title="Choose the outcome, not a pile of technology." text="ENASH groups its work into four clear areas. Open any service for detail, or send the business problem and we will help map it to the right solution." />
       <section className="section">
-        <div className="container">
-          <div className="services-grid">
-            {services.map((service) => <ServiceCard key={service.slug} service={service} />)}
-          </div>
+        <div className="container service-directory">
+          {serviceGroups.map((group, index) => (
+            <section className="service-directory-group" key={group.title}>
+              <div className="service-directory-intro"><span>0{index + 1}</span><h2>{group.title}</h2><p>{group.text}</p></div>
+              <div className="service-directory-list">
+                {servicesFor(group).map((service) => {
+                  const Icon = service.icon;
+                  return (
+                    <Link key={service.slug} to={`/services/${service.slug}`}>
+                      <span className="icon-box"><Icon size={20} /></span>
+                      <div><strong>{service.title}</strong><p>{service.short}</p></div>
+                      <ArrowRight size={18} />
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       </section>
-      <section className="section section-soft">
-        <div className="container split-section compact">
-          <SectionHeading eyebrow="Not sure what to choose?" title="Describe the business problem instead of picking a technology." text="A service request can start with the current problem, users, desired result and deadline. ENASH can map that brief to the right delivery approach." />
-          <div className="prompt-card"><strong>Example brief</strong><p>“We currently collect requests on WhatsApp and Excel. We need customers to submit online, staff to approve them, and management to see progress.”</p><Link to="/request-service">Send your own brief <ArrowRight size={16} /></Link></div>
-        </div>
-      </section>
-      <CTA />
+      <CTA title="Not sure which service fits?" text="Describe the workflow, problem or outcome. ENASH can help define the right scope." />
     </>
   );
 }

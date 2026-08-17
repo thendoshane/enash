@@ -6,20 +6,11 @@ import { projects } from '../data/siteData';
 export default function Projects() {
   return (
     <>
-      <PageHero eyebrow="Developed by ENASH Developers" title="Systems our developers have built." text="A selection of live ENASH-developed applications across operations, mobility and local discovery." />
-      <section className="section project-page-section">
-        <div className="container projects-grid">
-          {projects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}
-        </div>
+      <PageHero eyebrow="Developed systems" title="Products built by ENASH Developers." text="A small set of working systems that show the kind of product and platform work ENASH can deliver." />
+      <section className="section">
+        <div className="container projects-grid projects-page-grid">{projects.map((project) => <ProjectCard key={project.slug} project={project} />)}</div>
       </section>
-      <section className="section section-soft">
-        <div className="container portfolio-note">
-          <span className="eyebrow">Our development work</span>
-          <h2>Different problems, different products, one development team.</h2>
-          <p>ENASH Developers builds systems around the needs of each project rather than forcing every client into the same template or platform.</p>
-        </div>
-      </section>
-      <CTA title="Need our developers to build something for you?" text="Send your requirement manually or use ENASH Assistant to help define it first." />
+      <CTA title="Need your own system?" text="Bring the requirement. We will help turn it into a clear project." />
     </>
   );
 }
