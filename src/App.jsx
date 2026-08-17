@@ -1,44 +1,44 @@
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import Industries from './pages/Industries';
-import Procurement from './pages/Procurement';
-import Compliance from './pages/Compliance';
-import RequestService from './pages/RequestService';
-import Contact from './pages/Contact';
 import Insights from './pages/Insights';
 import InsightDetail from './pages/InsightDetail';
-import FAQ from './pages/FAQ';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import NotFound from './pages/NotFound';
+
+function PlaceholderPage({ title }) {
+  return (
+    <section className="section">
+      <div className="container">
+        <h1>{title}</h1>
+        <p>This page is being prepared.</p>
+        <Link className="text-link" to="/">Back to home</Link>
+      </div>
+    </section>
+  );
+}
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<PlaceholderPage title="About ENASH" />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
-        <Route path="/industries" element={<Industries />} />
-        <Route path="/procurement" element={<Procurement />} />
-        <Route path="/compliance" element={<Compliance />} />
-        <Route path="/request-service" element={<RequestService />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<PlaceholderPage title="Developed systems" />} />
+        <Route path="/projects/:slug" element={<PlaceholderPage title="Project details" />} />
+        <Route path="/industries" element={<PlaceholderPage title="Industries" />} />
+        <Route path="/procurement" element={<PlaceholderPage title="Procurement" />} />
+        <Route path="/compliance" element={<PlaceholderPage title="Compliance documents" />} />
+        <Route path="/request-service" element={<PlaceholderPage title="Start a project" />} />
+        <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<InsightDetail />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/faq" element={<PlaceholderPage title="Frequently asked questions" />} />
+        <Route path="/privacy" element={<PlaceholderPage title="Privacy" />} />
+        <Route path="/terms" element={<PlaceholderPage title="Terms" />} />
+        <Route path="*" element={<PlaceholderPage title="Page not found" />} />
       </Route>
     </Routes>
   );
