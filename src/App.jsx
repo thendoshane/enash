@@ -12,6 +12,7 @@ import Compliance from './pages/Compliance';
 import RequestService from './pages/RequestService';
 import Contact from './pages/Contact';
 import Insights from './pages/Insights';
+import InsightDetail from './pages/InsightDetail';
 import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/request-service" element={<RequestService />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/insights" element={<Insights />} />
+        <Route path="/insights/:slug" element={<InsightDetail />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />

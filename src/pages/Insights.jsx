@@ -1,33 +1,25 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-
-const insights = [
-  {
-    title: 'Starting small without limiting growth',
-    text: 'Most projects begin with one painful workflow. Build that part first, then expand from a stable foundation.',
-  },
-  {
-    title: 'AI where it supports real work',
-    text: 'Useful AI projects focus on repetitive tasks and decision support, not novelty. Keep humans in the loop.',
-  },
-  {
-    title: 'Procurement-ready digital delivery',
-    text: 'Clear documentation, traceable requirements and secure cloud deployment reduce procurement and compliance friction.',
-  },
-];
+import { insightPosts } from '../data/insights';
 
 export default function Insights() {
   return (
     <>
-      <PageHero eyebrow="Insights" title="Practical notes from ENASH delivery work." text="Brief observations from software, data and cloud projects delivered for real business outcomes." />
+      <PageHero
+        eyebrow="Insights"
+        title="Practical thinking on software, AI, cloud, data and digital delivery."
+        text="Useful ENASH guides for organisations planning technology projects in South Africa and teams working with us remotely."
+      />
       <section className="section">
         <div className="container insights-grid">
-          {insights.map((item, index) => (
-            <article key={item.title}>
-              <span className="insight-number">INSIGHT 0{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <small>ENASH perspective <ArrowUpRight size={13} /></small>
+          {insightPosts.map((post, index) => (
+            <article key={post.slug}>
+              <span className="insight-number">0{index + 1}</span>
+              <small>{post.category}</small>
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <Link to={`/insights/${post.slug}`}>Read article <ArrowRight size={15} /></Link>
             </article>
           ))}
         </div>

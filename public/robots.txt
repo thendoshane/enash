@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enash.co.za/sitemap.xml
+Sitemap: https://www.enash.co.za/sitemap.xml

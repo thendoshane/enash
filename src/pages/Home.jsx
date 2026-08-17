@@ -18,7 +18,7 @@ export default function Home() {
               We design and build <span className="hero-accent">digital systems</span> that make work easier.
             </h1>
             <p>
-              Software, websites, automation, data, AI and cloud services built around a real business need — then supported after launch.
+              ENASH is a Johannesburg-based technology team delivering software, websites, automation, data, AI and cloud services across South Africa, with remote delivery available internationally.
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary btn-lg" to="/request-service">

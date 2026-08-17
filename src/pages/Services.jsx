@@ -11,7 +11,7 @@ function servicesFor(group) {
 export default function Services() {
   return (
     <>
-      <PageHero eyebrow="Services" title="Choose the outcome, not a pile of technology." text="ENASH groups its work into four clear areas. Open any service for detail, or send the business problem and we will help map it to the right solution." />
+      <PageHero eyebrow="Services" title="Choose the outcome, not a pile of technology." text="ENASH provides software development, AI, data, cloud, automation, web and ICT services from Johannesburg to organisations across South Africa, with remote delivery available internationally. Choose the area closest to the outcome you need." />
       <section className="section">
         <div className="container service-directory">
           {serviceGroups.map((group, index) => (

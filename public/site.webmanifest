@@ -1,0 +1,17 @@
+{
+  "name": "ENASH",
+  "short_name": "ENASH",
+  "description": "Software, AI, data, cloud and digital technology services from Johannesburg, South Africa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#071b3a",
+  "icons": [
+    {
+      "src": "/enash-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

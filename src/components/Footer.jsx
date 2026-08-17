@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { company, projects } from '../data/siteData';
+
+const socialIcons = {
+  Instagram,
+  LinkedIn: Linkedin,
+  Facebook,
+};
 
 export default function Footer() {
   return (
@@ -12,6 +18,16 @@ export default function Footer() {
             <span className="brand-copy"><strong>ENASH</strong><small>Technology that gets work done.</small></span>
           </Link>
           <p>Software, data, AI, cloud and ICT services from Johannesburg, South Africa.</p>
+          <div className="footer-socials" aria-label="ENASH social media">
+            {company.socials.map((social) => {
+              const Icon = socialIcons[social.name];
+              return (
+                <a key={social.name} href={social.url} target="_blank" rel="noreferrer" aria-label={`ENASH on ${social.name}`} title={`ENASH on ${social.name}`}>
+                  {Icon && <Icon size={18} />}
+                </a>
+              );
+            })}
+          </div>
         </div>
 
         <div>
@@ -20,6 +36,7 @@ export default function Footer() {
           <Link to="/projects">Developed systems</Link>
           <Link to="/procurement">Procurement</Link>
           <Link to="/industries">Industries</Link>
+          <Link to="/insights">Insights</Link>
         </div>
 
         <div>
