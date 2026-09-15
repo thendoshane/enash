@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://enash.co.za/sitemap.xml

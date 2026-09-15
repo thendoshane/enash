@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="ENASH brand mark">
+  <rect width="120" height="120" rx="34" fill="#fffdf5"/>
+  <g transform="translate(60 60)">
+    <rect x="-12" y="-49" width="24" height="42" rx="12" fill="#3d9bd3" transform="rotate(-8)"/>
+    <rect x="15" y="-36" width="24" height="42" rx="12" fill="#31aa67" transform="rotate(50)"/>
+    <rect x="15" y="8" width="24" height="42" rx="12" fill="#e55d8d" transform="rotate(126)"/>
+    <rect x="-39" y="8" width="24" height="42" rx="12" fill="#ff3a3a" transform="rotate(54)"/>
+    <circle cx="0" cy="0" r="13" fill="#f4d226"/>
+    <circle cx="0" cy="0" r="6.5" fill="#fffdf5"/>
+  </g>
+</svg>
