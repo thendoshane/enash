@@ -10,9 +10,9 @@ export const company = {
 };
 
 export const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/enashcloud" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/enashza" },
   { label: "Instagram", href: "https://www.instagram.com/enashcloud" },
   { label: "Facebook", href: "https://www.facebook.com/enashcloud" },
   { label: "X", href: "https://x.com/enashcloud" },
-  { label: "TikTok", href: "https://www.tiktok.com/@enashcloud" },
+  { label: "TikTok", href: "https://www.tiktok.com/@enashza" },
 ];
